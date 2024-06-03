@@ -53,7 +53,7 @@ app.delete('/:employee_id', (req, res) => {
       }
       res.send('Employee deleted successfully');
     });
-  });
+});
   
 
 
