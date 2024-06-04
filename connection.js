@@ -61,7 +61,7 @@ app.put('/:employee_id', (req, res) => {
     const { employee_id } = req.params;
     const { name, role, age } = req.body;
   
-    pool.query('UPDATE Employee SET name = $1, role = $3, age = $4 WHERE id = employee_id = $2', [name, employee_id, role, age], (err, result) => {
+    pool.query('UPDATE Employee SET name = $1, role = $3, age = $4 WHERE employee_id = $2', [name, employee_id, role, age], (err, result) => {
       if (err) {
         res.status(500).json({ error: err.message });
         return;
